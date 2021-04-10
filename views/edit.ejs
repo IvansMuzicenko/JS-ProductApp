@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form action="/products/<%= food._id %>?_method=PUT" method="POST">
+        <label for="name">Product name</label>
+        <input type="text" name="name" id="name" placeholder="product name" value="<%= food.name %>">
+        <label for="price">Product Price per kg</label>
+        <input type="number" name="price" id="price" placeholder="price" value="<%= food.price %>">
+        <label for="type">Product type</label>
+        <select name="type" id="type">
+            <% for(let type of types) { %>
+                <option value="<%= type %>" <%= food.type === type ? 'selected' : '' %> > <%= type %></option>
+            <% } %>
+        </select>
+        <button>Submit</button>
+    </form>
+
+    <a href="/products/<%=product._id%>">Cancel</a>
+    
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= food.name %></title>
+</head>
+<body>
+    <h1><%= food.name %></h1>
+    <ul>
+        <li>Price: $<%= food.price %></li>
+        <li>Type: <a href="/products?type=<%= food.type %>"><%= food.type %></a></li>
+    </ul>
+    <a href="/products">All Products</a>
+    <a href="/products/<%=food._id%>/edit"></a>
+    <form action="/products/<%=food._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    
+</body>
+</html>
